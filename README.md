@@ -33,15 +33,8 @@ A professional gold mining investment analysis AI agent that provides intelligen
    pip3 install -r requirements.txt
    ```
 
-3. **Configure API keys**
-   
-   Edit the API configuration in `config.py`:
-   ```python
-   api_key: str = "your-api-key-here"
-   base_url: str = "https://api.deepseek.com"
-   ```
 
-4. **Run the application**
+3. **Run the application**
    ```bash
    python3 app.py
    ```
@@ -82,9 +75,8 @@ A professional gold mining investment analysis AI agent that provides intelligen
 
 #### 2. `ai_agent.py` - AI Agent Core
 - **Intent Recognition**: Intelligently identify user requirement types
-- **Task Planning**: Create execution steps based on intent (simplified to 3 steps)
-- **Data Generation**: Create simulated financial data
-- **Task Execution**: Step-by-step completion of analysis tasks with concise responses
+- **Task Planning**: Create execution steps based on intent
+- **Task Execution**: Step-by-step completion of analysis tasks
 - **Result Validation**: Multi-round validation to ensure answer quality
 
 #### 3. `app.py` - Web Application
@@ -94,8 +86,7 @@ A professional gold mining investment analysis AI agent that provides intelligen
 - Multi-language support (English primary)
 
 #### 4. `gold_data.py` - Gold Price Data Module
-- Real-time gold price fetching with automatic currency conversion
-- CNY/gram to USD/oz conversion (1 USD = 7.2 CNY, 1 oz = 31.1034768g)
+- Real-time gold price fetching
 - Historical price data with 30-day lookback
 - Market trend analysis and volatility calculations
 
@@ -111,10 +102,10 @@ User Input → Intent Recognition → Task Planning → Data Collection → Step
 
 ### AI Features
 1. **Intent Recognition**: Use LLM to analyze user input and identify specific needs
-2. **Dynamic Planning**: Generate corresponding task execution plans for different intents (3 focused steps)
+2. **Dynamic Planning**: Generate corresponding task execution plans for different intents
 3. **Simulated Data**: Generate realistic financial market simulation data
 4. **Multi-round Validation**: Ensure answer accuracy and completeness through AI self-validation
-5. **Concise Responses**: AI responses optimized for brevity and actionability (under 300 words per step)
+5. **Concise Responses**: AI responses optimized for brevity and actionability
 
 ### Data Integration
 - Real-time gold price data with automatic USD conversion
@@ -122,12 +113,6 @@ User Input → Intent Recognition → Task Planning → Data Collection → Step
 - Macroeconomic indicators (inflation rate, interest rates, USD index, etc.)
 - User profile data (age, experience, risk preference, etc.)
 - Investment product data (physical gold, ETFs, stocks, etc.)
-
-### Currency Conversion
-- **Source**: CNY per gram from Chinese gold market APIs
-- **Target**: USD per ounce for international compatibility
-- **Formula**: USD/oz = (CNY/gram ÷ 7.2) × 31.1034768
-- **Real-time**: Automatic conversion applied to all price displays
 
 ## 🛡️ Configuration
 
@@ -186,22 +171,9 @@ class AppConfig:
    - Install required dependencies: `pip3 install -r requirements.txt`
    - Check configuration file format
 
-3. **Inaccurate Analysis Results**
-   - Currently uses simulated data; real deployment requires real data sources
-   - Adjust validation threshold to improve result quality
-   - Increase retry count for better results
-
-4. **Gold Price Display Issues**
-   - Ensure internet connection for real-time data
-   - Check if gold data API is accessible
-   - Verify currency conversion is working properly
 
 ## 📈 Future Roadmap
 
-- [ ] Integration with real-time financial data APIs
-- [ ] Advanced charting and visualization features
-- [ ] Mobile application development
-- [ ] Support for additional precious metals
 - [ ] Real-time price alerts and notifications
 - [ ] Advanced risk management tools
 - [ ] Blockchain integration for RWA tokenization
