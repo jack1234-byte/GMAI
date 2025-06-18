@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Miner AI (GMAI)</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-coins"></i>
+                    <span id="app-title">Gold Miner AI (GMAI)</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 id="hero-title">Gold Miner AI (GMAI)</h1>
+                <p id="hero-subtitle">Advanced AI-powered platform for gold mining investment analysis, market prediction, and intelligent mining operations management.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label" id="stat-features">Core Features</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label" id="stat-available">Available</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label" id="stat-service">Smart Services</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gold Price Section -->
+    <section class="gold-price-section">
+        <div class="container">
+            <div class="gold-price-card">
+                <div class="gold-price-header">
+                    <h3>
+                        <i class="fas fa-coins"></i>
+                        <span id="gold-price-title">Real-time Gold Price</span>
+                    </h3>
+                    <button id="refresh-price" class="refresh-btn">
+                        <i class="fas fa-sync-alt"></i>
+                        <span id="refresh-text">Refresh</span>
+                    </button>
+                </div>
+                
+                <div class="gold-price-content">
+                    <div class="current-price">
+                        <div class="price-display">
+                            <span class="price-value" id="current-price">--.--</span>
+                            <span class="price-unit">USD/oz</span>
+                        </div>
+                        <div class="price-change" id="price-change">
+                            <span class="change-value">--</span>
+                            <span class="change-percent">(--.--%)</span>
+                        </div>
+                        <div class="price-date" id="price-date">Loading...</div>
+                    </div>
+                    
+                    <div class="price-actions">
+                        <button id="show-history" class="history-btn">
+                            <i class="fas fa-chart-line"></i>
+                            <span id="history-text">View 30-Day History</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Historical Prices -->
+                <div class="price-history" id="price-history" style="display: none;">
+                    <h4 id="history-title">30-Day Price History</h4>
+                    <div class="history-list" id="history-list">
+                        <!-- Historical prices will be loaded dynamically via JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 id="features-title">Core Features</h2>
+            
+            <!-- Available Features -->
+            <div class="features-section">
+                <h3 class="feature-section-title">Available Now</h3>
+                <div class="features-grid">
+                    <!-- Market Trend Prediction -->
+                    <div class="feature-card available" data-feature="market_prediction">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 id="feature-market-title">Market Trend Prediction</h3>
+                            <p id="feature-market-desc">AI-powered analysis of gold market trends, price forecasting, and investment timing recommendations.</p>
+                            <span class="feature-status available" id="feature-market-status">Available</span>
+                        </div>
+                    </div>
+
+                    <!-- Investment Advice -->
+                    <div class="feature-card available" data-feature="investment_advice">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 id="feature-investment-title">Investment Advisory & Risk Management</h3>
+                            <p id="feature-investment-desc">Personalized investment strategies, portfolio optimization, and comprehensive risk assessment.</p>
+                            <span class="feature-status available" id="feature-investment-status">Available</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coming Soon Features -->
+            <div class="features-section">
+                <h3 class="feature-section-title">Coming Soon</h3>
+                <div class="features-grid">
+                    <!-- Exploration -->
+                    <div class="feature-card coming-soon" data-feature="exploration">
+                        <div class="feature-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 id="feature-exploration-title">Exploration & Resource Assessment</h3>
+                            <p id="feature-exploration-desc">Geological analysis, resource estimation, and exploration project evaluation using AI technology.</p>
+                            <span class="feature-status coming-soon" id="feature-exploration-status">Coming Soon</span>
+                        </div>
+                    </div>
+
+                    <!-- Mining Optimization -->
+                    <div class="feature-card coming-soon" data-feature="mining_optimization">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 id="feature-optimization-title">Mining Operations Optimization</h3>
+                            <p id="feature-optimization-desc">Production efficiency optimization, cost analysis, and operational performance enhancement.</p>
+                            <span class="feature-status coming-soon" id="feature-optimization-status">Coming Soon</span>
+                        </div>
+                    </div>
+
+                    <!-- RWAI -->
+                    <div class="feature-card coming-soon" data-feature="rwai">
+                        <div class="feature-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 id="feature-rwai-title">RWAI (Real World Asset Intelligence)</h3>
+                            <p id="feature-rwai-desc">Advanced RWA tokenization, blockchain integration, and AI-driven asset management solutions.</p>
+                            <span class="feature-status coming-soon" id="feature-rwai-status">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Section -->
+    <section class="chat-section">
+        <div class="container">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h3 id="chat-title">AI Investment Assistant</h3>
+                    <button id="clear-chat" class="clear-btn">
+                        <i class="fas fa-trash"></i>
+                        <span id="clear-text">Clear Chat</span>
+                    </button>
+                </div>
+                
+                <div class="chat-messages" id="chat-messages">
+                    <div class="welcome-message">
+                        <div class="ai-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            <p id="welcome-text">Hello! I am your Gold Miner AI Assistant (GMAI). I can help you analyze market trends, develop investment strategies, evaluate mining projects, and manage operations. What would you like to know?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prompt-suggestions" id="prompt-suggestions">
+                    <!-- Prompt suggestions will be loaded dynamically via JavaScript -->
+                </div>
+
+                <div class="chat-input-container">
+                    <div class="chat-input">
+                        <input type="text" id="message-input" placeholder="Ask about gold market trends, investment strategies, mining operations...">
+                        <button id="send-button">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p id="loading-text">AI is processing...</p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html> 
