@@ -108,7 +108,7 @@ User Input → Intent Recognition → Task Planning → Data Collection → Step
 5. **Concise Responses**: AI responses optimized for brevity and actionability
 
 ### Data Integration
-- Real-time gold price data with automatic USD conversion
+- Real-time gold price data
 - Supply & demand data (global demand, mining supply, recycling supply, etc.)
 - Macroeconomic indicators (inflation rate, interest rates, USD index, etc.)
 - User profile data (age, experience, risk preference, etc.)
