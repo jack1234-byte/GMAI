@@ -25,7 +25,7 @@ A professional gold mining investment analysis AI agent that provides intelligen
 1. **Clone the project**
    ```bash
    git clone <repository-url>
-   cd new_rwa_ai_agent
+   cd [project_name]
    ```
 
 2. **Install dependencies**
